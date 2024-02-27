@@ -151,7 +151,7 @@ uploaded_image = st.file_uploader("Upload a dog image", type=["jpg", "png", "jpe
 
 if uploaded_image is not None:
     image = tf.image.decode_image(uploaded_image.read(), channels=3)
-    image = tf.image.resize(image, (224, 224))
+    image = tf.image.resize(image, (128, 128))
     image = np.expand_dims(image, axis=0) / 255.0
 
     st.image(uploaded_image, caption="Uploaded Image", use_column_width=True)
